@@ -1,0 +1,17 @@
+{{#light-table table tableClassNames="my-table-thing" as |t|}}
+    {{t.head fixed=false }}
+
+    {{#t.body canSelect=false onScrolledToBottom=(action 'fetchData') as |body|}}
+        {{#if isLoading}}
+            {{#body.loader}}
+            <div style="text-align: center;">
+                <p style="margin: 0; display: inline-block; background-color: #0D3349; color: #F4FF77; font-size: 2em;">Data is loading ...</p>
+            </div>
+            {{/body.loader}}
+        {{else if table.isEmpty}}
+            {{#body.no-data}}
+                There is no data.
+            {{/body.no-data}}
+        {{/if}}
+    {{/t.body}}
+{{/light-table}}

@@ -1,0 +1,5 @@
+<div style="width: 100vw; height: 20px; font-size: 14px; font-weight: 700; text-overflow: ellipsis; overflow: hidden; position: fixed; top: 0; left: 0; background-color: #F4FF77; opacity: 0.8;">
+    {{#if isLoading}}Loading...{{else}}Done{{/if}}
+</div>
+<p style="margin-top: 20px;"></p>
+{{table-thing isLoading=(readonly isLoading) loadMoreData=(action 'loadMoreData')}}

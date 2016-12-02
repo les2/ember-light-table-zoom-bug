@@ -39,7 +39,11 @@ module.exports = function(environment) {
   }
 
   if (environment === 'production') {
-
+    ENV.rootURL = '/ember-light-table-zoom-bug';
+    ENV.locationType = 'hash';
+    ENV['ember-faker'] = {
+      enabled: true
+    };
   }
 
   return ENV;
